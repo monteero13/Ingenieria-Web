@@ -1,0 +1,29 @@
+<div>
+    <h2>Lista de Pacientes</h2>
+    <a routerLink="/add-patient">Registrar Paciente</a>
+    <table>
+      <thead>
+        <tr>
+          <th>Nombre</th>
+          <th>Edad</th>
+          <th>Síntomas</th>
+          <th>Prioridad</th>
+          <th>Estado</th>
+          <th>Acción</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let patient of patients">
+          <td>{{ patient.name }}</td>
+          <td>{{ patient.age }}</td>
+          <td>{{ patient.symptoms }}</td>
+          <td>{{ patient.priority }}</td>
+          <td>{{ patient.status }}</td>
+          <td>
+            <button (click)="deletePatient(patient.id)">Eliminar</button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  
