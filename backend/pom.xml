@@ -11,26 +11,53 @@
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-web</artifactId>
+            <version>3.4.0</version> <!-- Asegúrate de tener la versión correcta -->
         </dependency>
 
         <!-- Spring Boot Starter Data JPA -->
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-data-jpa</artifactId>
+            <version>3.4.0</version> <!-- Asegúrate de tener la versión correcta -->
         </dependency>
 
-        <!-- MySQL Connector -->
+        <!-- SQL Server JDBC Driver -->
         <dependency>
-            <groupId>mysql</groupId>
-            <artifactId>mysql-connector-java</artifactId>
-            <scope>runtime</scope>
+            <groupId>com.microsoft.sqlserver</groupId>
+            <artifactId>mssql-jdbc</artifactId>
+            <version>11.2.1.jre8</version>
         </dependency>
 
         <!-- Lombok -->
         <dependency>
             <groupId>org.projectlombok</groupId>
             <artifactId>lombok</artifactId>
+            <version>1.18.28</version> <!-- Or the latest stable version -->
             <scope>provided</scope>
         </dependency>
+
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-security</artifactId>
+            <version>3.0.0</version> <!-- Asegúrate de que sea la misma versión de Spring Boot -->
+        </dependency>
+
     </dependencies>
+
+
+    <!-- Sección Build donde se configura el plugin de compilación -->
+        <build>
+            <plugins>
+            <!-- Configuración del Maven Compiler Plugin -->
+                <plugin>
+                    <groupId>org.apache.maven.plugins</groupId>
+                    <artifactId>maven-compiler-plugin</artifactId>
+                    <version>3.8.1</version> <!-- Versión más reciente del plugin -->
+                    <configuration>
+                        <source>17</source> <!-- Configura la versión del JDK que estás utilizando -->
+                        <target>17</target> <!-- Configura la versión del JDK que estás utilizando -->
+                    </configuration>
+                </plugin>
+            </plugins>
+        </build>
 </project>

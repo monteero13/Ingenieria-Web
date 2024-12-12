@@ -1,4 +1,4 @@
-package backend.src.main.java.triage;
+package triage;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
