@@ -1,0 +1,72 @@
+<div class="container mt-5">
+  <h2 class="text-center mb-4">Registrar Nuevo Paciente</h2>
+  <form (ngSubmit)="registrarPaciente()" class="shadow p-4 bg-white rounded">
+    
+    <!-- ID Paciente -->
+    <div class="mb-3">
+      <label for="idpaciente" class="form-label">ID Paciente:</label>
+      <input id="idpaciente" [(ngModel)]="paciente.idpaciente" name="idpaciente" required class="form-control" />
+    </div>
+
+    <!-- Nombre -->
+    <div class="mb-3">
+      <label for="nombre" class="form-label">Nombre:</label>
+      <input id="nombre" [(ngModel)]="paciente.nombre" name="nombre" required class="form-control" />
+    </div>
+
+    <!-- Edad -->
+    <div class="mb-3">
+      <label for="edad" class="form-label">Edad:</label>
+      <input id="edad" type="number" [(ngModel)]="paciente.edad" name="edad" required class="form-control" />
+    </div>
+
+    <!-- Prioridad -->
+    <div class="mb-3">
+      <label for="prioridad" class="form-label">Prioridad:</label>
+      <select id="prioridad" [(ngModel)]="paciente.prioridad" name="prioridad" required class="form-select">
+        <option value="baja">Baja</option>
+        <option value="media">Media</option>
+        <option value="alta">Alta</option>
+      </select>
+    </div>
+
+    <!-- Estado de Atención -->
+    <div class="mb-3">
+      <label for="estadoAtencion" class="form-label">Estado de Atención:</label>
+      <select id="estadoAtencion" [(ngModel)]="paciente.estadoAtencion" name="estadoAtencion" required class="form-select">
+        <option value="en espera">En espera</option>
+        <option value="atendido">Atendido</option>
+        <option value="en tratamiento">En tratamiento</option>
+      </select>
+    </div>
+
+    <!-- Tiempo de Espera -->
+    <div class="mb-3">
+      <label for="tiempoEspera" class="form-label">Tiempo de Espera (minutos):</label>
+      <input id="tiempoEspera" type="number" [(ngModel)]="paciente.tiempoEspera" name="tiempoEspera" required class="form-control" />
+    </div>
+
+    <!-- Departamento Asignado -->
+    <div class="mb-3">
+      <label for="departamentoAsignado" class="form-label">Departamento Asignado:</label>
+      <input id="departamentoAsignado" [(ngModel)]="paciente.departamentoAsignado" name="departamentoAsignado" required class="form-control" />
+    </div>
+
+    <!-- Síntomas -->
+    <div class="mb-3">
+      <label for="sintomas" class="form-label">Síntomas Actuales:</label>
+      <textarea id="sintomas" [(ngModel)]="paciente.sintomas" name="sintomas" class="form-control"></textarea>
+    </div>
+
+    <!-- Tratamiento -->
+    <div class="mb-3">
+      <label for="tratamiento" class="form-label">Tratamiento:</label>
+      <textarea id="tratamiento" [(ngModel)]="paciente.tratamiento" name="tratamiento" class="form-control"></textarea>
+    </div>
+
+    <!-- Botón de Enviar -->
+    <div class="d-grid gap-2">
+      <button type="submit" class="btn btn-primary btn-lg">Registrar</button>
+    </div>
+  </form>
+</div>

@@ -1,0 +1,65 @@
+﻿<div class="add-edit-container">
+    <div class="card shadow-lg">
+        <h4 class="card-header text-center">{{ title }}</h4>
+        <div class="card-body">
+            <form *ngIf="!loading" [formGroup]="form" (ngSubmit)="onSubmit()">
+                <div class="row">
+                    <div class="mb-3 col">
+                        <label class="form-label">Nombre Completo</label>
+                        <input
+                            type="text"
+                            formControlName="firstName"
+                            class="form-control"
+                            [ngClass]="{ 'is-invalid': submitted && f.firstName.errors }"
+                        />
+                        <div *ngIf="submitted && f.firstName.errors" class="invalid-feedback">
+                            <div *ngIf="f.firstName.errors.required">Es necesario ingresar el nombre completo</div>
+                        </div>
+                    </div>
+                    <div class="mb-3 col">
+                        <label class="form-label">Rol</label>
+                        <input
+                            type="text"
+                            formControlName="lastName"
+                            class="form-control"
+                            [ngClass]="{ 'is-invalid': submitted && f.lastName.errors }"
+                        />
+                        <div *ngIf="submitted && f.lastName.errors" class="invalid-feedback">
+                            <div *ngIf="f.lastName.errors.required">Es necesario ingresar un rol</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="mb-3 col">
+                        <label class="form-label">Nombre de usuario</label>
+                        <input
+                            type="text"
+                            formControlName="username"
+                            class="form-control"
+                            [ngClass]="{ 'is-invalid': submitted && f.username.errors }"
+                        />
+                        <div *ngIf="submitted && f.username.errors" class="invalid-feedback">
+                            <div *ngIf="f.username.errors.required">Es necesario ingresar el usuario</div>
+                        </div>
+                    </div>
+                    <div class="mb-3 col">
+                        <label class="form-label">
+                            Contraseña
+                            <em *ngIf="id">(Deje este espacio en blanco para no cambiar la contraseña)</em>
+                        </label>
+                        <input
+                            type="password"
+                            formControlName="password"
+                            class="form-control"
+                            [ngClass]="{ 'is-invalid': submitted && f.password.errors }"
+                        />
+                        <div *ngIf="submitted && f.password.errors" class="invalid-feedback">
+                            <div *ngIf="f.password.errors.required">Es necesario poner contraseña</div>
+                            <div *ngIf="f.password.errors.minlength">
+                                La contraseña debe tener mínimo 6 caracteres
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="mb-3 text-center">
+     

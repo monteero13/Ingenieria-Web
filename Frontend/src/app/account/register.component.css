@@ -1,0 +1,45 @@
+/* Centrar la tarjeta */
+.register-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background: linear-gradient(to right, #ff7e5f, #feb47b);
+  }
+  
+  /* Estilo de la tarjeta */
+  .card {
+    max-width: 500px;
+    border-radius: 15px;
+    overflow: hidden;
+  }
+  
+  .card-header {
+    background: #28a745;
+    color: white;
+    padding: 15px;
+    font-size: 1.5rem;
+    font-weight: bold;
+  }
+  
+  .card-body {
+    padding: 30px;
+  }
+  
+  /* Estilo de los inputs */
+  .form-control {
+    border-radius: 10px;
+    border: 1px solid #ced4da;
+    padding: 10px;
+  }
+  
+  .form-control:focus {
+    border-color: #28a745;
+    box-shadow: 0 0 5px rgba(40, 167, 69, 0.5);
+  }
+  
+  /* Botón */
+  .btn-primary {
+    background-color: #28a745;
+    border-color: #28a745
+  }

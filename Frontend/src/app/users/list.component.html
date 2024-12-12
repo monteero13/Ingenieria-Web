@@ -1,0 +1,46 @@
+﻿<div class="users-container">
+    <div class="card shadow-lg">
+        <h4 class="card-header text-center">Usuarios</h4>
+        <div class="card-body">
+            <div class="d-flex justify-content-between mb-3">
+                <h5 class="text-primary">Lista de usuarios</h5>
+                <a routerLink="add" class="btn btn-success">Añadir Usuario</a>
+            </div>
+            <table class="table table-striped table-hover">
+                <thead class="table-primary">
+                    <tr>
+                        <th style="width: 30%">Nombre completo</th>
+                        <th style="width: 30%">Rol</th>
+                        <th style="width: 30%">Nombre de usuario</th>
+                        <th style="width: 10%">Acciones</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let user of users">
+                        <td>{{ user.firstName }}</td>
+                        <td>{{ user.lastName }}</td>
+                        <td>{{ user.username }}</td>
+                        <td class="text-center">
+                            <div class="d-flex justify-content-center">
+                                <a routerLink="edit/{{ user.id }}" class="btn btn-sm btn-primary me-2">Editar</a>
+                                <button
+                                    (click)="deleteUser(user.id)"
+                                    class="btn btn-sm btn-danger"
+                                    [disabled]="user.isDeleting"
+                                >
+                                    <span *ngIf="user.isDeleting" class="spinner-border spinner-border-sm"></span>
+                                    <span *ngIf="!user.isDeleting">Borrar</span>
+                                </button>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr *ngIf="!users">
+                        <td colspan="4" class="text-center">
+                            <span class="spinner-border spinner-border-lg"></span>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>

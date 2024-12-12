@@ -1,0 +1,72 @@
+/* Contenedor principal */
+.users-container,
+.add-edit-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background: linear-gradient(to right, #ff7e5f, #feb47b);
+}
+
+/* Tarjeta */
+.card {
+  max-width: 800px;
+  border-radius: 15px;
+  overflow: hidden;
+}
+
+.card-header {
+  background: #007bff;
+  color: white;
+  padding: 15px;
+  font-size: 1.5rem;
+  font-weight: bold;
+  text-align: center;
+}
+
+.card-body {
+  padding: 30px;
+}
+
+/* Tabla */
+.table {
+  margin-top: 20px;
+}
+
+.table-primary {
+  background-color: #007bff;
+  color: white;
+}
+
+.table-hover tbody tr:hover {
+  background-color: rgba(0, 123, 255, 0.1);
+}
+
+/* Botones */
+.btn-primary {
+  background-color: #007bff;
+  border-color: #007bff;
+}
+
+.btn-primary:hover {
+  background-color: #0056b3;
+  border-color: #004085;
+}
+
+.btn-danger:hover {
+  background-color: #c82333;
+  border-color: #bd2130;
+}
+
+.btn-link {
+  color: #007bff;
+}
+
+.btn-link:hover {
+  text-decoration: underline;
+}
+
+/* Spinner */
+.spinner-border {
+  vertical-align: middle;
+}
